@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Inclusion Through Art</title>
+<style>
+:root{--ink:#191827;--muted:#666273;--paper:#fffaf4;--card:#ffffffcc;--violet:#6c4cff;--pink:#fa5c9b;--gold:#f6b73c;--cyan:#48c6d9;--focus:#005fcc}
+*{box-sizing:border-box} body{margin:0;font-family:Segoe UI,system-ui,sans-serif;color:var(--ink);background:radial-gradient(circle at 10% 10%,#ffe7f0 0,transparent 30%),radial-gradient(circle at 90% 10%,#e8e3ff 0,transparent 32%),linear-gradient(135deg,#fffaf4,#f7f4ff);min-height:100vh}
+button,input,textarea,select{font:inherit} button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.shell{max-width:1180px;margin:auto;padding:28px}.nav{display:flex;justify-content:space-between;align-items:center;gap:20px}.brand{font-weight:800;letter-spacing:.02em}.badge{background:#191827;color:#fff;padding:8px 12px;border-radius:999px;font-size:.83rem}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;padding:54px 0 32px}.eyebrow{color:#6c4cff;font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem}.hero h1{font-size:clamp(3rem,8vw,6.7rem);line-height:.88;margin:12px 0 22px;letter-spacing:-.07em}.hero h1 span{color:transparent;background:linear-gradient(90deg,var(--violet),var(--pink),var(--gold));background-clip:text}.hero p{font-size:1.18rem;line-height:1.6;color:var(--muted);max-width:620px}.hero-art{height:430px;border-radius:42% 58% 62% 38%/42% 38% 62% 58%;background:conic-gradient(from 180deg,var(--violet),var(--pink),var(--gold),var(--cyan),var(--violet));position:relative;box-shadow:0 30px 80px #7d5cff33;overflow:hidden}.hero-art:before,.hero-art:after{content:"";position:absolute;border-radius:50%;mix-blend-mode:screen}.hero-art:before{width:250px;height:250px;background:#fff8;top:35px;left:65px}.hero-art:after{width:310px;height:310px;background:#181827aa;right:-90px;bottom:-70px}.silhouette{position:absolute;inset:86px 105px;background:#fff;border-radius:50% 50% 44% 44%;clip-path:polygon(40% 0,60% 0,68% 22%,92% 38%,88% 100%,12% 100%,8% 38%,32% 22%);opacity:.93}
+.panel{background:var(--card);backdrop-filter:blur(18px);border:1px solid #ffffff;border-radius:28px;padding:28px;box-shadow:0 24px 70px #3d2a7715}.step{display:none}.step.active{display:block}.step h2{font-size:2rem;margin:0 0 6px}.sub{color:var(--muted);margin:0 0 22px}.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.choice{border:2px solid #ebe7f0;background:white;border-radius:20px;padding:18px;text-align:left;cursor:pointer;min-height:150px}.choice:hover,.choice.selected{border-color:var(--violet);transform:translateY(-2px);box-shadow:0 10px 30px #6c4cff18}.choice .icon{font-size:2rem;display:block;margin-bottom:14px}.choice strong{display:block;font-size:1.05rem;margin-bottom:6px}.choice small{color:var(--muted);line-height:1.45}
+label{font-weight:700;display:block;margin:16px 0 8px}textarea,select{width:100%;border:2px solid #ded9e8;border-radius:16px;padding:14px;background:#fff}textarea{min-height:150px;resize:vertical}.consent{display:flex;gap:10px;align-items:flex-start;background:#f5f2ff;border-radius:15px;padding:14px;margin-top:16px}.consent input{margin-top:4px}.actions{display:flex;justify-content:space-between;align-items:center;margin-top:22px;gap:12px}.btn{border:0;border-radius:999px;padding:13px 22px;cursor:pointer;font-weight:800}.btn.primary{background:var(--ink);color:white}.btn.secondary{background:#eee9f6;color:var(--ink)}.btn:disabled{opacity:.45;cursor:not-allowed}
+.progress{height:8px;background:#ece8f0;border-radius:999px;margin:10px 0 26px;overflow:hidden}.progress span{display:block;height:100%;width:33%;background:linear-gradient(90deg,var(--violet),var(--pink));transition:.3s}.loading{text-align:center;padding:45px}.orb{width:90px;height:90px;margin:0 auto 22px;border-radius:50%;background:conic-gradient(var(--violet),var(--pink),var(--gold),var(--cyan),var(--violet));animation:spin 1.2s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.exhibit{display:none}.exhibit.active{display:block}.exhibit-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.exhibit h2{font-size:clamp(2rem,5vw,4rem);line-height:1;margin:0}.quote{font-size:1.3rem;line-height:1.5;color:#4f4960;border-left:5px solid var(--pink);padding-left:18px;margin:24px 0}.gallery{display:grid;grid-template-columns:1.1fr .9fr .9fr;grid-template-rows:240px 220px;gap:16px}.art{border-radius:24px;position:relative;overflow:hidden;min-height:200px}.art span{position:absolute;left:18px;bottom:16px;background:#ffffffdf;padding:8px 12px;border-radius:999px;font-weight:800}.a1{grid-row:1/3;background:radial-gradient(circle at 65% 24%,#fff 0 7%,transparent 8%),repeating-radial-gradient(circle at 45% 60%,#ffdb66 0 10px,#ff7dad 11px 28px,#6651d9 29px 55px,#1d1a31 56px 84px)}.a2{background:linear-gradient(125deg,#13152d 0 45%,#54cbde 46% 56%,#f9ac43 57% 68%,#f75f9d 69%)}.a2:after{content:"";position:absolute;width:110px;height:180px;background:#fff9;left:42%;top:20px;border-radius:50% 50% 20% 20%}.a3{background:conic-gradient(from 40deg at 60% 50%,#fff,#fdc24f,#f85b9b,#6d50e7,#42c9dc,#fff)}.a4{grid-column:2/4;background:linear-gradient(135deg,#f9efe5,#c8bfff);}.a4:before{content:"";position:absolute;inset:25px 18%;border-radius:50%;background:repeating-linear-gradient(90deg,#352f51 0 8px,transparent 9px 24px),linear-gradient(#ff9fbe,#ffe098)}
+.insights{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.insight{background:#fff;border-radius:18px;padding:18px}.insight h3{margin:0 0 8px}.insight p{margin:0;color:var(--muted);line-height:1.45}.rai{margin-top:18px;border:1px solid #d9d3e6;border-radius:18px;padding:18px;color:#555064}.footer{padding:34px 0;color:var(--muted);font-size:.9rem;text-align:center}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.hero-art{height:310px}.choices,.insights{grid-template-columns:1fr}.gallery{display:block}.art{margin-bottom:14px}.exhibit-head{display:block}.hero h1{font-size:4.2rem}.shell{padding:18px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <nav class="nav" aria-label="Main navigation"><div class="brand">INCLUSION THROUGH ART</div><div class="badge">Hackathon prototype</div></nav>
+  <header class="hero">
+    <div><div class="eyebrow">Help people understand experiences different from their own</div><h1>Walk in<br><span>my world.</span></h1><p>Turn a lived experience into an accessible digital art exhibition that encourages curiosity, empathy, and thoughtful action.</p><button class="btn primary" onclick="startExperience()">Create an empathy canvas</button></div>
+    <div class="hero-art" role="img" aria-label="Abstract multicolor artwork representing many perspectives"><div class="silhouette"></div></div>
+  </header>
+
+  <main id="creator" class="panel" aria-live="polite">
+    <div class="progress" aria-label="Progress"><span id="progressBar"></span></div>
+    <section class="step active" id="step1">
+      <h2>Choose a perspective</h2><p class="sub">Start with a fictional or consented experience. The app does not diagnose or label people.</p>
+      <div class="choices">
+        <button class="choice" data-value="newcomer"><span class="icon">🌍</span><strong>New place, new language</strong><small>Understand the cognitive effort of joining a team in an unfamiliar language and culture.</small></button>
+        <button class="choice" data-value="neurodiversity"><span class="icon">🌀</span><strong>Different ways of processing</strong><small>Explore how dense information and rapid context switching can create exclusion.</small></button>
+        <button class="choice" data-value="accessibility"><span class="icon">✨</span><strong>Barriers in the environment</strong><small>See how design choices, rather than the person, can make participation harder.</small></button>
+      </div>
+      <div class="actions"><span></span><button class="btn primary" id="next1" disabled onclick="goStep(2)">Continue</button></div>
+    </section>
+
+    <section class="step" id="step2">
+      <h2>Share the moment</h2><p class="sub">Use 2 to 5 sentences. Avoid names, confidential information, medical details, or assumptions about others.</p>
+      <label for="story">The experience</label><textarea id="story" placeholder="Example: In fast meetings, I was translating every sentence in my head. By the time I found the words, the conversation had moved on. I wanted to contribute, but silence was mistaken for uncertainty."></textarea>
+      <label for="style">Art direction</label><select id="style"><option>Abstract light and color</option><option>Dreamlike collage</option><option>Editorial illustration</option><option>Soft geometric minimalism</option></select>
+      <div class="consent"><input id="consent" type="checkbox"><label for="consent" style="margin:0;font-weight:500">I confirm this is fictional, my own experience, or shared with permission. I understand the output is an artistic interpretation, not an assessment.</label></div>
+      <div class="actions"><button class="btn secondary" onclick="goStep(1)">Back</button><button class="btn primary" onclick="generateExhibit()">Generate exhibition</button></div>
+    </section>
+
+    <section class="step" id="step3"><div class="loading"><div class="orb"></div><h2>Translating perspective into art...</h2><p class="sub">Finding themes, creating metaphors, and forming inclusive actions.</p></div></section>
+  </main>
+
+  <section id="exhibit" class="exhibit" aria-live="polite">
+    <div class="exhibit-head"><div><div class="eyebrow">A generated empathy exhibition</div><h2 id="exhibitTitle">Between words</h2></div><button class="btn secondary" onclick="speakExhibit()">🔊 Listen</button></div>
+    <p class="quote" id="exhibitStory"></p>
+    <div class="gallery" aria-label="Generated abstract art gallery"><div class="art a1"><span>The inner translation</span></div><div class="art a2"><span>Conversation in motion</span></div><div class="art a3"><span>Space to enter</span></div><div class="art a4"><span>Belonging is designed together</span></div></div>
+    <div class="insights"><div class="insight"><h3>What may be unseen</h3><p id="unseen"></p></div><div class="insight"><h3>What inclusion can look like</h3><p id="action"></p></div><div class="insight"><h3>A reflection prompt</h3><p id="reflection"></p></div></div>
+    <div class="rai"><strong>Responsible AI note:</strong> This experience offers an artistic interpretation, not a diagnosis or factual claim about a person or group. The storyteller remains in control and can edit or discard the output. Use fictional or consented stories only.</div>
+    <div class="actions"><button class="btn secondary" onclick="resetApp()">Create another</button><button class="btn primary" onclick="window.print()">Save exhibition</button></div>
+  </section>
+  <footer class="footer">Designed for empathy, agency, accessibility, and human connection.</footer>
+</div>
+<script>
+let selected="";
+const data={
+ newcomer:{title:"Between words",unseen:"Mental translation, unfamiliar norms, and fear of being misunderstood can make a thoughtful person appear quiet.",action:"Share context early, slow down key moments, invite written input, and leave space before moving on.",reflection:"Where might speed be excluding a perspective that the team needs?"},
+ neurodiversity:{title:"A thousand open windows",unseen:"Noise, dense text, ambiguous priorities, and rapid context switching can consume the energy needed to contribute.",action:"Use clear structure, written summaries, predictable agendas, and more than one way to participate.",reflection:"Is our way of working flexible enough for different ways of thinking?"},
+ accessibility:{title:"The barrier is not the person",unseen:"A missing caption, low contrast, inaccessible document, or visual-only instruction can turn a simple task into a barrier.",action:"Use accessible formats, descriptions, captions, keyboard support, and test with the people affected.",reflection:"What could we redesign so that more people can participate from the start?"}
+};
+document.querySelectorAll('.choice').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');selected=b.dataset.value;document.getElementById('next1').disabled=false;}));
+function startExperience(){document.getElementById('creator').scrollIntoView({behavior:'smooth'});}
+function goStep(n){document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));document.getElementById('step'+n).classList.add('active');document.getElementById('progressBar').style.width=(n*33.3)+'%';}
+function generateExhibit(){const story=document.getElementById('story').value.trim();if(story.length<20){alert('Please add a short experience of at least 20 characters.');return}if(!document.getElementById('consent').checked){alert('Please confirm consent and safe data use.');return}goStep(3);setTimeout(()=>{const d=data[selected];document.getElementById('exhibitTitle').textContent=d.title;document.getElementById('exhibitStory').textContent=story;document.getElementById('unseen').textContent=d.unseen;document.getElementById('action').textContent=d.action;document.getElementById('reflection').textContent=d.reflection;document.getElementById('creator').style.display='none';document.getElementById('exhibit').classList.add('active');document.getElementById('exhibit').scrollIntoView({behavior:'smooth'});},1300)}
+function speakExhibit(){if(!('speechSynthesis' in window)){alert('Text-to-speech is not supported in this browser.');return}speechSynthesis.cancel();const text=document.getElementById('exhibitTitle').textContent+'. '+document.getElementById('exhibitStory').textContent+'. '+document.getElementById('unseen').textContent+' '+document.getElementById('action').textContent;const u=new SpeechSynthesisUtterance(text);u.rate=.92;speechSynthesis.speak(u)}
+function resetApp(){speechSynthesis?.cancel();document.getElementById('story').value='';document.getElementById('consent').checked=false;document.getElementById('creator').style.display='block';document.getElementById('exhibit').classList.remove('active');goStep(1);document.getElementById('creator').scrollIntoView({behavior:'smooth'})}
+</script>
+</body>
+</html>
